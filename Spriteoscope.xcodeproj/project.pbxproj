@@ -14,18 +14,16 @@
 		551B8FCB28F1F75D00687836 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551B8FCA28F1F75D00687836 /* AppDelegate.swift */; };
 		551B8FCD28F1F75D00687836 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551B8FCC28F1F75D00687836 /* GameViewController.swift */; };
 		551B8FD028F1F75D00687836 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 551B8FCE28F1F75D00687836 /* Main.storyboard */; };
-		551B8FD828F1F75D00687836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 551B8FB228F1F75D00687836 /* Assets.xcassets */; };
-		551B8FD928F1F75D00687836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 551B8FB228F1F75D00687836 /* Assets.xcassets */; };
 		551B8FE428F1F79200687836 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 551B8FE228F1F79100687836 /* GameScene.sks */; };
 		551B8FE528F1F79200687836 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 551B8FE228F1F79100687836 /* GameScene.sks */; };
 		551B8FE628F1F79200687836 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551B8FE328F1F79100687836 /* GameScene.swift */; };
 		551B8FE728F1F79200687836 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551B8FE328F1F79100687836 /* GameScene.swift */; };
 		551B8FF028F2048A00687836 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 551B8FEE28F2048900687836 /* LICENSE */; };
 		551B8FF128F2048A00687836 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 551B8FEF28F2048A00687836 /* README.md */; };
+		551B8FF328F22E2D00687836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 551B8FF228F22E2D00687836 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		551B8FB228F1F75D00687836 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		551B8FB728F1F75D00687836 /* Spriteoscope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spriteoscope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		551B8FBA28F1F75D00687836 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		551B8FBC28F1F75D00687836 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +38,7 @@
 		551B8FE328F1F79100687836 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		551B8FEE28F2048900687836 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		551B8FEF28F2048A00687836 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		551B8FF228F22E2D00687836 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Downloads/AppIcons-2/Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +76,7 @@
 			children = (
 				551B8FE228F1F79100687836 /* GameScene.sks */,
 				551B8FE328F1F79100687836 /* GameScene.swift */,
-				551B8FB228F1F75D00687836 /* Assets.xcassets */,
+				551B8FF228F22E2D00687836 /* Assets.xcassets */,
 			);
 			path = "Spriteoscope Shared";
 			sourceTree = "<group>";
@@ -196,7 +195,7 @@
 				551B8FC028F1F75D00687836 /* Main.storyboard in Resources */,
 				551B8FE428F1F79200687836 /* GameScene.sks in Resources */,
 				551B8FC328F1F75D00687836 /* LaunchScreen.storyboard in Resources */,
-				551B8FD828F1F75D00687836 /* Assets.xcassets in Resources */,
+				551B8FF328F22E2D00687836 /* Assets.xcassets in Resources */,
 				551B8FF028F2048A00687836 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,7 +206,6 @@
 			files = (
 				551B8FE528F1F79200687836 /* GameScene.sks in Resources */,
 				551B8FD028F1F75D00687836 /* Main.storyboard in Resources */,
-				551B8FD928F1F75D00687836 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +378,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JQMXA59YCH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -387,7 +386,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -409,6 +408,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JQMXA59YCH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -416,7 +416,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
