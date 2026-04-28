@@ -1,0 +1,24 @@
+# Xcode build artifacts
+build/
+DerivedData/
+
+# User settings
+*.xcuserstate
+*.xcscmblueprint
+*.xcuserdata/
+
+# VS Code
+.vscode/
+
+# Derived data log
+.derived-data-log*
+
+# Swift Package Manager
+/.build/
+/Package.resolved
+
+# CocoaPods
+Pods/
+
+# macOS
+.DS_Store
