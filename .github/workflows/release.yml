@@ -1,0 +1,97 @@
+name: Release builds
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Release tag to upload assets to (e.g. v1.0.0)'
+        required: true
+        type: string
+
+# Allow the workflow to upload release assets
+permissions:
+  contents: write
+
+jobs:
+  build-macos:
+    name: Build macOS app
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Build and archive (macOS)
+        run: |
+          xcodebuild \
+            -project Spriteoscope.xcodeproj \
+            -scheme "Spriteoscope macOS" \
+            -configuration Release \
+            -archivePath "${{ runner.temp }}/Spriteoscope.xcarchive" \
+            archive \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Export .app from archive
+        run: |
+          APP_PATH=$(find "${{ runner.temp }}/Spriteoscope.xcarchive" -name "*.app" | head -1)
+          mkdir -p "${{ runner.temp }}/dist"
+          cp -R "$APP_PATH" "${{ runner.temp }}/dist/"
+
+      - name: Zip the .app
+        run: |
+          cd "${{ runner.temp }}/dist"
+          zip -r Spriteoscope-macOS.zip *.app
+
+      - name: Upload to release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload "${{ github.event.release.tag_name || inputs.tag_name }}" \
+            "${{ runner.temp }}/dist/Spriteoscope-macOS.zip" \
+            --clobber
+
+  build-ios:
+    name: Build iOS app (simulator archive)
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Build and archive (iOS simulator)
+        run: |
+          xcodebuild \
+            -project Spriteoscope.xcodeproj \
+            -scheme "Spriteoscope iOS" \
+            -configuration Release \
+            -sdk iphonesimulator \
+            -archivePath "${{ runner.temp }}/Spriteoscope-iOS.xcarchive" \
+            archive \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Export .app from archive
+        run: |
+          APP_PATH=$(find "${{ runner.temp }}/Spriteoscope-iOS.xcarchive" -name "*.app" | head -1)
+          mkdir -p "${{ runner.temp }}/dist-ios"
+          cp -R "$APP_PATH" "${{ runner.temp }}/dist-ios/"
+
+      - name: Zip the .app
+        run: |
+          cd "${{ runner.temp }}/dist-ios"
+          zip -r Spriteoscope-iOS-simulator.zip *.app
+
+      - name: Upload to release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload "${{ github.event.release.tag_name || inputs.tag_name }}" \
+            "${{ runner.temp }}/dist-ios/Spriteoscope-iOS-simulator.zip" \
+            --clobber
