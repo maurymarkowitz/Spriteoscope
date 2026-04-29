@@ -7,6 +7,8 @@
 
 import SpriteKit
 
+let VERSION_STRING = "2.0"
+
 @MainActor
 class SpriteoscopeScene: SKScene, ObservableObject {
     @Published var myPaused = false
@@ -35,12 +37,13 @@ class SpriteoscopeScene: SKScene, ObservableObject {
     // high nibble for even x, low nibble for odd x
     // we track it here to more clearly mirror the 8080 logic.
     
-    // the original code runs at about 80 loops per second, so we'll use a timer
-    // instead of using the Scene's natural 60 fps updates
+    // the original code ran on a 2 MHz Altair; each inner iteration
+    // takes ~892 cycles, giving ~2250 iterations/sec at 2 MHz.
+    // we'll use a timer instead of using the Scene's natural 60 fps updates
     var timer = Timer()
     
     // and let you pick the looping rate
-    let loopspersecond = 400.0
+    let loopspersecond = 2250.0
     
     // and an enum to hold the Dazzler's 16 colors
     let colormap = [

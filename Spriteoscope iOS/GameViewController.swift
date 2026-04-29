@@ -105,7 +105,7 @@ class GameViewController: UIViewController {
 
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = "Spriteoscope v1.0"
+        titleLabel.text = "Spriteoscope v\(VERSION_STRING)"
         titleLabel.textColor = .white
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
         titleLabel.textAlignment = .center

@@ -98,7 +98,7 @@ struct InfoPanelView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Spriteoscope v1.0")
+            Text("Spriteoscope v\(VERSION_STRING)")
                 .font(.title2)
                 .fontWeight(.bold)
                 .foregroundColor(.white)
@@ -149,7 +149,7 @@ struct AboutView: View {
             Spacer()
             HStack {
                 Spacer()
-                Text("Spriteoscope v1.0")
+                Text("Spriteoscope v\(VERSION_STRING)")
                 Spacer()
                 Text("Spriteoscope is a recreation of one of the world's first bits of demoware. Released in 1976 for S-100 machines with the Cromemco Dazzler graphics card, a machine was set up in a computer store window in New York City and caused a traffic jam on 5th Avenue that required the police to come and order people to move along. It's a trivially simple program, but the patterns it creates are mesmerizing.").lineLimit(nil)
                 Spacer()
