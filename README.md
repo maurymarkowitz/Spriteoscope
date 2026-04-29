@@ -13,9 +13,9 @@ The Dazzler had an odd layout for the framebuffer memory which split the screen 
 Loop speed
 ----------
 
-The original 8080 code runs in a tight loop with no display synchronization. Each inner iteration of the main loop takes approximately 892 clock cycles. On the Cromemco hardware, which ran at 4 MHz, this produces roughly 4,480 inner iterations per second. The outer loop, which changes the coordinates and color, runs every 63 inner iterations, giving about 71 coordinate changes per second.
+The original 8080 code runs in a tight loop with no display synchronization. Each inner iteration of the main loop takes approximately 892 clock cycles. On a 2 MHz Altair 8800 that would produce about 2,220 loops per second, on a 4 MHz Z80 it would reach about 4,480.
 
-The Swift code uses a `Timer` rather than tying updates to the display's frame rate (which would cap it at 60 fps). The `loopspersecond` constant is set to 2,250 to approximate a 2 MHz Altair 8800. Setting it to 4,480 would match the faster 4 MHz Cromemco hardware.
+Since SpriteKit would normally cap the updates at 60 fps, the simulation runs in its own loop outside the main display loop. This `loopspersecond` constant is set to 2,250 to approximate a 2 MHz Altair 8800.
 
 The code
 --------
