@@ -103,7 +103,7 @@ struct InfoPanelView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.white)
 
-            Image("info-animation")
+            Image("computer_store")
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: 420, maxHeight: 220)
@@ -115,7 +115,7 @@ struct InfoPanelView: View {
                 )
 
             ScrollView {
-                Text("Spriteoscope is a recreation of the original Cromemco Dazzler kaleidoscope. This screen slides into view from the bottom and provides a quick demo panel inside the app window.")
+                Text("Spriteoscope is a recreation of the original Cromemco Dazzler kaleidoscope demo.")
                     .foregroundColor(.white)
                     .font(.body)
                     .multilineTextAlignment(.center)

@@ -118,13 +118,13 @@ class GameViewController: UIViewController {
         animationView.backgroundColor = .black
         animationView.layer.borderWidth = 1
         animationView.layer.borderColor = UIColor(white: 1, alpha: 0.25).cgColor
-        if let image = UIImage(named: "info-animation") {
+        if let image = UIImage(named: "computer_store") {
             animationView.image = image
         }
 
         let messageLabel = UILabel()
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
-        messageLabel.text = "Spriteoscope is a recreation of the original Cromemco Dazzler kaleidoscope. This screen slides into view from the bottom and provides a quick demo panel inside the app window."
+        messageLabel.text = "Spriteoscope is a recreation of the original Cromemco Dazzler kaleidoscope demo."
         messageLabel.textColor = .white
         messageLabel.font = UIFont.systemFont(ofSize: 15)
         messageLabel.numberOfLines = 0

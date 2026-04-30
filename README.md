@@ -13,7 +13,7 @@ The Dazzler had an odd layout for the framebuffer memory which split the screen 
 Loop speed
 ----------
 
-The original 8080 code runs in a tight loop with no display synchronization. Each inner iteration of the main loop takes approximately 892 clock cycles. On a 2 MHz Altair 8800 that would produce about 2,220 loops per second, on a 4 MHz Z80 it would reach about 4,480.
+The original 8080 code runs in a tight loop with no display synchronization. Each inner iteration of the main loop takes approximately 892 clock cycles. On a 2 MHz Altair 8800 that would produce about 2,224 loops per second, on a 4 MHz Z80 it would reach about 4,480.
 
 Since SpriteKit would normally cap the updates at 60 fps, the simulation runs in its own loop outside the main display loop. This `loopspersecond` constant is set to 2,250 to approximate a 2 MHz Altair 8800.
 
